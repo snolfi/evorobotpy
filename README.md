@@ -1,2 +1,2 @@
 # evorobotpy
-A tool to experiment with adaptive (evolutionary and reinforcement learning) robotics
+A tool for adaptive (evolutionary and reinforcement learning) robotics
