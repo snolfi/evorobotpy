@@ -341,8 +341,10 @@ class coevo2(EvoAlgo):
         if (parsen[0] == "p" or parsen[0] == "P"):
             if (parsen[0] == "P"):
                 self.policy.test = 0
+                rendt = False
             else:
                 self.policy.test = 1
+                rendt = True
             popfile = "S%dG%d.npy" % (seed,int(parsen[1]))
             print("load %s" % (popfile))
             pop = np.load(popfile)
