@@ -340,9 +340,9 @@ class coevo2(EvoAlgo):
         parsen = testparam.split("-")
         if (parsen[0] == "p" or parsen[0] == "P"):
             if (parsen[0] == "P"):
-                rendt = True
+                self.policy.test = 0
             else:
-                rendt = False
+                self.policy.test = 1
             popfile = "S%dG%d.npy" % (seed,int(parsen[1]))
             print("load %s" % (popfile))
             pop = np.load(popfile)
@@ -390,7 +390,7 @@ class coevo2(EvoAlgo):
                     if (rendt):
                         print("pred %d prey %d " % (rank1[i1], rank2[i2]), end = '')
                     self.policy.set_trainable_flat(np.concatenate((pop[rank1[i1]], pop[popsize+rank2[i2]])))
-                    eval_rews, eval_length = self.policy.rollout(1, render=rendt, timestep_limit=1000)
+                    eval_rews, eval_length = self.policy.rollout(1, timestep_limit=1000)
                     tot_rew += eval_rews
                     fitcol[i2] += eval_rews
                     if (not rendt):
@@ -414,6 +414,7 @@ class coevo2(EvoAlgo):
             pop = np.load(popfile)
             popshape = pop.shape
             popsize = int(popshape[0] / 2)
+            self.policy.test = 0
             bestrew1 = ""
             bestrew2 = ""
             print("seed %d: postevaluation gen %d against contemporary and ancient competitors every %d generaions" % (seed, int(parsen[1]), int(parsen[2])))
@@ -436,7 +437,7 @@ class coevo2(EvoAlgo):
                                 self.policy.set_trainable_flat(np.concatenate((pop[i1], pop2[popsize+i2])))
                             else:
                                 self.policy.set_trainable_flat(np.concatenate((pop2[i1], pop[popsize+i2])))                                
-                            rew, eval_length = self.policy.rollout(1, render=False, timestep_limit=1000)
+                            rew, eval_length = self.policy.rollout(1, timestep_limit=1000)
                             tot_rew += rew
                             ind_rew += rew
                         ind_rew = ind_rew / popsize
@@ -461,6 +462,7 @@ class coevo2(EvoAlgo):
         # "C-file1-file2, cross-experiment (pred and prey of file1 against themselves and against prey and pred of file2
         if (parsen[0] == "c" or parsen[0] == "C"):
             print("crosstest of %s against %s " % (parsen[1], parsen[2]))
+            self.policy.test = 0
             pop1 = np.load(parsen[1])
             popshape1 = pop1.shape
             popsize1 = int(popshape1[0] / 2)
@@ -497,7 +499,7 @@ class coevo2(EvoAlgo):
                             self.policy.set_trainable_flat(np.concatenate((pop2[i1], pop1[popsize1+i2])))
                         if (pp == 3):
                             self.policy.set_trainable_flat(np.concatenate((pop2[i1], pop2[popsize2+i2])))                               
-                        rew, eval_length = self.policy.rollout(1, render=False, timestep_limit=1000)
+                        rew, eval_length = self.policy.rollout(1, timestep_limit=1000)
                         tot_rew[pp] += rew
                 tot_rew[pp] /= (psizea*psizeb)
                 print("%.2f " % (tot_rew[pp]), flush=True)
