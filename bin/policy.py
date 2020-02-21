@@ -229,7 +229,7 @@ class BulletPolicy(Policy):
             rews += rew
         # Normalize reward by the number of trials
         rews /= ntrials
-        if (ntrials > 1):
+        if (self.test > 0 and ntrials > 1):
             print("Average Fit %d Steps %d " % (rews, steps/float(ntrials)))
         return rews, steps
     
@@ -298,7 +298,7 @@ class GymPolicy(Policy):
             rews += rew
         # Normalize reward by the number of trials
         rews /= ntrials
-        if (ntrials > 1):
+        if (self.test > 0 and ntrials > 1):
             print("Average Fit %d Steps %d " % (rews, steps/float(ntrials)))
         return rews, steps
 
@@ -370,7 +370,7 @@ class GymPolicyDiscr(Policy):
             rews += rew
         # Normalize reward by the number of trials
         rews /= ntrials
-        if (ntrials > 1):
+        if (self.test > 0 and ntrials > 1):
             print("Average Fit %d Steps %d " % (rews, steps/float(ntrials)))
         return rews, steps
 
@@ -434,7 +434,7 @@ class ErPolicy(Policy):
             rews += rew
         # Normalize reward by the number of trials
         rews /= ntrials
-        if (ntrials > 1):
+        if (self.test > 0 and ntrials > 1):
             print("Average Fit %d Steps %d " % (rews, steps/float(ntrials)))
         return rews, steps
         
