@@ -22,4 +22,4 @@ Alternatively you should install:
 2) [AI Gym](gym.openai.com)
 3) [GNU Scientific Library](https://www.gnu.org/software/gsl)
 4) [Pybullet](https://pybullet.org/)
-5) [baselines](https://github.com/openai/baselines) (optional)
+5) [Baselines](https://github.com/openai/baselines) (optional)
