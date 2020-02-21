@@ -220,7 +220,7 @@ class BulletPolicy(Policy):
                 if done:
                     break
             if (self.test > 0):
-                print("Trial %d Fit %d Steps %d " % (trial, rew, t))
+                print("Trial %d Fit %.2f Steps %d " % (trial, rew, t))
             # if we normalize, we might need to stop store data for normalization
             if self.normalize and normphase > 0:
                 self.nn.normphase(0)
@@ -230,7 +230,7 @@ class BulletPolicy(Policy):
         # Normalize reward by the number of trials
         rews /= ntrials
         if (self.test > 0 and ntrials > 1):
-            print("Average Fit %d Steps %d " % (rews, steps/float(ntrials)))
+            print("Average Fit %d Steps %.2f " % (rews, steps/float(ntrials)))
         return rews, steps
     
 # standard gym policy use double observation and action vectors and recreate the observation vector each step
@@ -289,7 +289,7 @@ class GymPolicy(Policy):
                 if done:
                     break
             if (self.test > 0):
-                print("Trial %d Fit %d Steps %d " % (trial, rew, t))
+                print("Trial %d Fit %d Steps %.2f " % (trial, rew, t))
             # if we normalize, we might need to stop store data for normalization
             if self.normalize and normphase > 0:
                 self.nn.normphase(0)
@@ -299,7 +299,7 @@ class GymPolicy(Policy):
         # Normalize reward by the number of trials
         rews /= ntrials
         if (self.test > 0 and ntrials > 1):
-            print("Average Fit %d Steps %d " % (rews, steps/float(ntrials)))
+            print("Average Fit %d Steps %.2f " % (rews, steps/float(ntrials)))
         return rews, steps
 
 # standard gym policy use double observation and action vectors and recreate the observation vector each step
@@ -361,7 +361,7 @@ class GymPolicyDiscr(Policy):
                 if done:
                     break
             if (self.test > 0):
-                print("Trial %d Fit %d Steps %d " % (trial, rew, t))
+                print("Trial %d Fit %d Steps %.2f " % (trial, rew, t))
             # if we normalize, we might need to stop store data for normalization
             if self.normalize and normphase > 0:
                 self.nn.normphase(0)
@@ -425,7 +425,7 @@ class ErPolicy(Policy):
                 if self.done:
                     break
             if (self.test > 0):
-                print("Trial %d Fit %d Steps %d " % (trial, rew, t))
+                print("Trial %d Fit %d Steps %.2f " % (trial, rew, t))
             # if we normalize, we might need to stop store data for normalization
             if self.normalize and normphase > 0:
                 self.nn.normphase(0)
@@ -435,6 +435,6 @@ class ErPolicy(Policy):
         # Normalize reward by the number of trials
         rews /= ntrials
         if (self.test > 0 and ntrials > 1):
-            print("Average Fit %d Steps %d " % (rews, steps/float(ntrials)))
+            print("Average Fit %d Steps %.2f " % (rews, steps/float(ntrials)))
         return rews, steps
         
