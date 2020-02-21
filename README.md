@@ -1,7 +1,7 @@
 # evorobotpy
 A tool for training robots in simulation through evolutionary and reiforcement learning methods
 
-All the software required is available ready to be used through the docker container prepared by Vladislav Kurenkov available from https://hub.docker.com/r/vkurenkov/cognitive-robotics that can be pulled, built and run through the following commands:
+All the software required is available ready to be used through the docker container [docker container](https://hub.docker.com/r/vkurenkov/cognitive-robotics) prepared by Vladislav Kurenkov that can be pulled, built and run through the following commands:
 
 # Download the container
 docker pull vkurenkov/cognitive-robotics
