@@ -230,7 +230,7 @@ class BulletPolicy(Policy):
         # Normalize reward by the number of trials
         rews /= ntrials
         if (ntrials > 1):
-            print("Average Fit %d Steps %d " % (rews, t/float(ntrials)))
+            print("Average Fit %d Steps %d " % (rews, steps/float(ntrials)))
         return rews, steps
     
 # standard gym policy use double observation and action vectors and recreate the observation vector each step
@@ -299,7 +299,7 @@ class GymPolicy(Policy):
         # Normalize reward by the number of trials
         rews /= ntrials
         if (ntrials > 1):
-            print("Average Fit %d Steps %d " % (rews, t/float(ntrials)))
+            print("Average Fit %d Steps %d " % (rews, steps/float(ntrials)))
         return rews, steps
 
 # standard gym policy use double observation and action vectors and recreate the observation vector each step
@@ -371,7 +371,7 @@ class GymPolicyDiscr(Policy):
         # Normalize reward by the number of trials
         rews /= ntrials
         if (ntrials > 1):
-            print("Average Fit %d Steps %d " % (rews, t/float(ntrials)))
+            print("Average Fit %d Steps %d " % (rews, steps/float(ntrials)))
         return rews, steps
 
 # Evorobotpy policies use float observation and action vectors and do not re-allocate the observation vectors
@@ -435,6 +435,6 @@ class ErPolicy(Policy):
         # Normalize reward by the number of trials
         rews /= ntrials
         if (ntrials > 1):
-            print("Average Fit %d Steps %d " % (rews, t/float(ntrials)))
+            print("Average Fit %d Steps %d " % (rews, steps/float(ntrials)))
         return rews, steps
         
