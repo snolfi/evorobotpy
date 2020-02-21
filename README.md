@@ -3,6 +3,7 @@ A tool for training robots in simulation through evolutionary and reiforcement l
 
 All the software required is available ready to be used through the docker container [docker container](https://hub.docker.com/r/vkurenkov/cognitive-robotics) prepared by Vladislav Kurenkov that can be pulled, built and run through the following commands:
 
+```
 # Download the container
 docker pull vkurenkov/cognitive-robotics
 
@@ -15,3 +16,4 @@ docker run -it \
   -p 8888:8888 \
   --mount source=cognitive-roboitcs-opt-volume,target=/opt \
   cognitive-robotics
+```
