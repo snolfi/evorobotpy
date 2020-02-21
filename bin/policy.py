@@ -349,7 +349,7 @@ class GymPolicyDiscr(Policy):
                 # Perform a step
                 self.ob, r, done, _ = self.env.step(action)
                 # Append the reward
-                rew += rew
+                rew += r
                 t += 1
                 if render:
                     if (self.test == 1):
