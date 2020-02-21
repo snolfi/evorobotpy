@@ -18,6 +18,8 @@ docker run -it \
   cognitive-robotics
 ```
 Alternatively you should install:
-1) Python 3.5+
+1) Python 3.5+ and the cython, pyglet and matplotlib packages
 2) [AI Gym](gym.openai.com)
-3) 
+3) [GNU Scientific Library](https://www.gnu.org/software/gsl)
+4) [Pybullet](https://pybullet.org/)
+5) [baselines](https://github.com/openai/baselines) (optional)
