@@ -17,3 +17,7 @@ docker run -it \
   --mount source=cognitive-roboitcs-opt-volume,target=/opt \
   cognitive-robotics
 ```
+Alternatively you should install:
+1) Python 3.5+
+2) [AI Gym](gym.openai.com)
+3) 
