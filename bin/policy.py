@@ -424,7 +424,7 @@ class ErPolicy(Policy):
                     renderWorld.update(self.objs, info, self.ob, self.ac, self.nact)
                 if self.done:
                     break
-             if (self.test > 0):
+            if (self.test > 0):
                 print("Trial %d Fit %d Steps %d " % (trial, rew, t))
             # if we normalize, we might need to stop store data for normalization
             if self.normalize and normphase > 0:
