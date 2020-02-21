@@ -26,4 +26,4 @@ As an alternative the docker, you should install:
 4) [Pybullet](https://pybullet.org/)
 5) [Baselines](https://github.com/openai/baselines) (optional)
 
-and you should clone evorobotby 
+and you should clone evorobotpy 
