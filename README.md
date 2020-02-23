@@ -1,7 +1,7 @@
 # evorobotpy
 A tool for training robots in simulation through evolutionary and reinforcement learning methods
 
-It includes a [guide](github.com/snolfi/evorobotpy/blob/master/doc/LearningHowToTrainRobots.pdf) that gently introduce the topic and explain how to use this and other available tools to train robots in simulation.
+It includes a [guide](/blob/master/doc/LearningHowToTrainRobots.pdf) that gently introduce the topic and explain how to use this and other available tools to train robots in simulation.
 
 All the software required is available ready to be used through the docker container [docker container](https://hub.docker.com/r/vkurenkov/cognitive-robotics) prepared by Vladislav Kurenkov that can be pulled, built and run through the following commands:
 
