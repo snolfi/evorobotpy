@@ -9,15 +9,14 @@ All the software required is available ready to be used through the docker conta
 # Download the container
 docker pull vkurenkov/cognitive-robotics
 
-# Build the contaienr
-docker build -t vkurenkov/cognitive-robotics .
-
 # Run container
 docker run -it \
   -p 6080:6080 \
   -p 8888:8888 \
-  --mount source=cognitive-roboitcs-opt-volume,target=/opt \
-  cognitive-robotics
+  --mount source=cognitive-robotics-opt-volume,target=/opt \
+  vkurenkov/cognitive-robotics
+
+
 ```
 Render environments using NoVNC (desktop access via browser at localhost:6080). Code editing using VSCode (you can attach to the container using VSCode and edit the source code conveniently -- allows to use IntelliSense and more). You can use Jupyter Notebook, just run jupyter notebook --ip=0.0.0.0 --port=8888 inside a container and you can access it in your browser at localhost:8888. The changes made to the source code are persistent (e.g. you can restart the container and your changes won't be lost)
 
