@@ -26,9 +26,12 @@ docker run --gpus all -it \
 --mount source=cognitive-robotics-opt-volume,target=/opt \
 vkurenkov/cognitive-robotics:gpu
 
-# To login in teh container use the following command
+# To login in the container use the following command
 docker ps -a                    # to see the running containers and identify the ID of the evorobotpy container
 docker exec -it <id> /bin/bash  # to login in the container
+
+# To logout from the container use:
+exit
 
 # You can visualize the graphic rendering from your browser by using the following address
 localhost:6080
